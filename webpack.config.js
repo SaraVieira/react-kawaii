@@ -13,7 +13,8 @@ module.exports = {
     publicPath: '/lib/',
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
@@ -30,13 +31,16 @@ module.exports = {
       {
         test: /\.(jpg|png|gif|svg)$/i,
         use: [
-          'file-loader?name=[path][name].[ext]?[hash]&outputPath=/assets/&publicPath=/assets/'
+          'file-loader?name=[path][name].[ext]?[hash]&outputPath=/assets/&publicPath=/assets/',
         ],
       },
-    ]
+    ],
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      'rsg-components/Wrapper': path.join(__dirname, '_styleguide/wrapper'),
+    },
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({

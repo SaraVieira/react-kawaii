@@ -4,7 +4,9 @@ import paths from './paths';
 import Face from '../common/face/Face';
 import Wrapper from '../common/wrapper/Wrapper';
 
-const CreditCard = ({ size, text, showTextOnHover, color, mood }) => (
+const CreditCard = ({
+ size, text, showTextOnHover, color, mood 
+}) => (
   <Wrapper
     style={{ width: size * 1.38, height: size }}
     showTextOnHover={showTextOnHover}
